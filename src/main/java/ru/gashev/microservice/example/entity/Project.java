@@ -9,6 +9,7 @@ import java.util.Set;
 @Data
 @Entity
 @NoArgsConstructor
+@Table(name = "projects")
 public class Project {
 
     @Id

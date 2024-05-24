@@ -13,17 +13,8 @@
     <div class="header__home-button button">
       <a href="/">Home</a>
     </div>
-    <div class="header__admin-button button" th:if="${isAdmin}">
-      <a href="/admin">Admin</a>
-    </div>
   </div>
-  <div class="header__right-part row">
-    <div class="header__logout">
-      <form th:action="@{/logout}" th:method="post">
-        <button type="submit" value="logout">Logout</button>
-      </form>
-    </div>
-  </div>
+
 
 </div>
 
