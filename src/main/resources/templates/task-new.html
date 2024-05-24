@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="header row">
+
+  <div class="header__left-part row">
+    <div class="header__home-button button">
+      <a href="/">Home</a>
+    </div>
+    <div class="header__admin-button button" th:if="${isAdmin}">
+      <a href="/admin">Admin</a>
+    </div>
+  </div>
+  <div class="header__right-part row">
+    <div class="header__logout">
+      <form th:action="@{/logout}" th:method="post">
+        <button type="submit" value="logout">Logout</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<br><br>
+
+<div class="content">
+  <form th:action="@{/tasks}" th:method="post">
+    <input hidden name="projectId" th:value="${projectId}">
+    <input type="text" placeholder="Task name" name="name">
+    <br/><br/>
+    <input checked type="radio" name="type" value="TECHNICAL_SPECIALIST">Technical
+    <br/><br/>
+    <input type="radio" name="type" value="MANAGER">Manager
+    <br/><br/>
+    <textarea name="text" cols="90" rows="10" placeholder="Description"></textarea>
+    <br/><br/>
+    <input type="submit" value="Create">
+  </form>
+
+</div>
+
+</body>
+</html>

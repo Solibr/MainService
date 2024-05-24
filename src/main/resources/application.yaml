@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: "jdbc:h2:./db/project-manager"
+    username: "sa"
+    password: ""
+
+  jpa:
+    hibernate:
+      ddl-auto: update

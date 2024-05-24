@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update project</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="header row">
+
+  <div class="header__left-part row">
+    <div class="header__home-button button">
+      <a href="/">Home</a>
+    </div>
+    <div class="header__admin-button button" th:if="${isAdmin}">
+      <a href="/admin">Admin</a>
+    </div>
+  </div>
+  <div class="header__right-part row">
+    <div class="header__logout">
+      <form th:action="@{/logout}" th:method="post">
+        <button type="submit" value="logout">Logout</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<div class="content">
+  <div class="add-form" style="padding: 100px;">
+    <form th:action="@{'/projects/' + ${id}}" th:method="post">
+      <label for="name">New name</label>
+      <input type="text" name="name" id="name" th:value="${oldName}">
+      <input type="hidden" name="id" th:value="${id}">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+
+
+</body>
+</html>
