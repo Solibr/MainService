@@ -13,3 +13,5 @@ spring:
     change-log: classpath:liquibase/changelog.yaml
     enabled: true
 
+
+springdoc.api-docs.path: /api-docs
